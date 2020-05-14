@@ -27,10 +27,10 @@ export default {
     // HelloWorld
     // card
   },
-  // mounted() {
-  //   this.width = this.$refs.card.offsetWidth;
-  //   this.height = this.$refs.card.offsetHeight;
-  // },
+  mounted() {
+    this.width = this.$refs.card.offsetWidth;
+    this.height = this.$refs.card.offsetHeight;
+  },
   props: ["dataImage"],
   data: () => ({
     width: 0,
