@@ -33,15 +33,16 @@
       <!-- main website -->
       <transition name="loader">
         <div class="all2" v-if="mainPage">
-          <div class="menu" @click="open($event)" v-if="menuIcon">
+          <!-- <div class="menu" @click="open($event)" v-if="menuIcon">
             <span class="menu-icon"></span>
-          </div>
+          </div>-->
 
           <div id="app">
             <div id="nav">
               <router-link to="/">Home</router-link>|
               <router-link to="/about">About</router-link>|
               <router-link to="/dashboard">Portfolio</router-link>|
+              <router-link to="/contact">Contact</router-link>|
               <!-- <router-link to="/dashboard">dashboard</router-link> -->
             </div>
           </div>
@@ -69,7 +70,7 @@
             </card>
           </div>-->
 
-          <transition name="bounce" key="username-input">
+          <!-- <transition name="bounce" key="username-input">
             <div class="menu-block" v-if="showMenu">
               <div></div>
               <div class="one">
@@ -104,8 +105,8 @@
               </div>
               <div></div>
             </div>
-            <!-- <p class="text2">NEW-ERA-MEDIA</p> -->
-          </transition>
+           
+          </transition>-->
         </div>
       </transition>
     </div>

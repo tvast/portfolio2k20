@@ -12,19 +12,25 @@
       :use-css-transforms="true"
     >
       <grid-item
-        v-for="item in layout"
+        v-for="(item,index) in layout"
         :x="item.x"
         :y="item.y"
         :w="item.w"
         :h="item.h"
         :i="item.i"
-        :key="item.i"
+        :key="index"
       >
-        <div class>
-          <card :data-image="item.i.img">
-            <h1 slot="header">{{item.i.title}}</h1>
-            <p slot="content">{{item.i.kpi}}</p>
-          </card>
+        <div @click="openoverlay(index)">
+          <div>
+            <card :data-image="item.i.img">
+              <h1 class="showContent" slot="header">{{item.i.title}}</h1>
+              <p slot="content">{{item.i.kpi}}</p>
+            </card>
+            <div class="overlay" v-if="show" :ref="'foo'+index">
+              <div>Overlay Text</div>
+              <img :src="item.i.img" />
+            </div>
+          </div>
         </div>
       </grid-item>
     </grid-layout>
@@ -47,12 +53,14 @@ export default {
   },
   data: function() {
     return {
+      show: false,
+      transitionName: "fade",
       layout: [
         {
-          x: 0,
+          x: 1,
           y: 0,
-          w: 2,
-          h: 8,
+          w: 3,
+          h: 10,
           i: {
             title: "Flight booking",
             kpi:
@@ -62,10 +70,10 @@ export default {
           }
         },
         {
-          x: 4,
+          x: 5,
           y: 0,
           w: 2,
-          h: 8,
+          h: 10,
           i: {
             title: "Developer journey",
             kpi:
@@ -75,10 +83,10 @@ export default {
           }
         },
         {
-          x: 8,
+          x: 9,
           y: 0,
           w: 2,
-          h: 8,
+          h: 10,
           i: {
             title: "Cosmic civil war",
             kpi:
@@ -89,10 +97,10 @@ export default {
           }
         },
         {
-          x: 0,
+          x: 1,
           y: 5,
           w: 2,
-          h: 8,
+          h: 10,
           i: {
             title: "Hackathon NAO",
             kpi:
@@ -103,10 +111,10 @@ export default {
           }
         },
         {
-          x: 4,
+          x: 5,
           y: 5,
           w: 2,
-          h: 8,
+          h: 10,
           i: {
             title: "Transport order monitoring",
             kpi:
@@ -116,10 +124,10 @@ export default {
           }
         },
         {
-          x: 8,
+          x: 9,
           y: 5,
           w: 2,
-          h: 8,
+          h: 10,
           i: {
             title: "Triangle generator",
             kpi:
@@ -129,10 +137,10 @@ export default {
           }
         },
         {
-          x: 0,
+          x: 1,
           y: 5,
           w: 2,
-          h: 8,
+          h: 10,
           i: {
             title: "Edouard wolton",
             kpi:
@@ -142,10 +150,10 @@ export default {
           }
         },
         {
-          x: 4,
+          x: 5,
           y: 5,
           w: 2,
-          h: 8,
+          h: 10,
           i: {
             title: "Vamos a casa",
             kpi:
@@ -156,10 +164,10 @@ export default {
           }
         },
         {
-          x: 8,
+          x: 9,
           y: 5,
           w: 2,
-          h: 8,
+          h: 10,
           i: {
             title: "Le shop a Terence",
             kpi:
@@ -168,78 +176,34 @@ export default {
             img: "https://i.ibb.co/wc5vQK4/page21.png"
           }
         }
-        // {
-        //   x: 6,
-        //   y: 5,
-        //   w: 2,
-        //   h: 8,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // },
-        // {
-        //   x: 8,
-        //   y: 5,
-        //   w: 2,
-        //   h: 8,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // },
-        // {
-        //   x: 10,
-        //   y: 5,
-        //   w: 2,
-        //   h: 8,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // },
-        // {
-        //   x: 0,
-        //   y: 10,
-        //   w: 2,
-        //   h: 8,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // },
-        // {
-        //   x: 2,
-        //   y: 10,
-        //   w: 2,
-        //   h: 8,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // },
-        // {
-        //   x: 4,
-        //   y: 10,
-        //   w: 2,
-        //   h: 8,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // },
-        // {
-        //   x: 6,
-        //   y: 10,
-        //   w: 2,
-        //   h: 8,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // },
-        // {
-        //   x: 8,
-        //   y: 10,
-        //   w: 2,
-        //   h: 8,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // },
-        // {
-        //   x: 10,
-        //   y: 10,
-        //   w: 2,
-        //   h: 4,
-        //   i: { title: "kpi3", kpi: "2400", color: "green" }
-        // }
       ]
     };
+  },
+  methods: {
+    openoverlay() {
+      // console.log(this.$refs["foo" + input]);
+      this.show = true;
+      // this.$refs["foo" + input].classList.toggle("overlay");
+    }
   }
 };
 </script>
 <style lang="scss" scoped>
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
 body {
   margin: 40px 0;
   font-family: "Raleway";
