@@ -1,35 +1,34 @@
 <template>
-  <!-- <div class="home"> -->
-  <grid-layout
-    :layout.sync="layout"
-    :col-num="12"
-    :row-height="30"
-    :is-draggable="true"
-    :is-resizable="true"
-    :is-mirrored="false"
-    :vertical-compact="true"
-    :margin="[10, 10]"
-    :use-css-transforms="true"
-  >
-    <grid-item
-      v-for="item in layout"
-      :x="item.x"
-      :y="item.y"
-      :w="item.w"
-      :h="item.h"
-      :i="item.i"
-      :key="item.i"
+  <div class>
+    <grid-layout
+      :layout.sync="layout"
+      :col-num="12"
+      :row-height="30"
+      :is-draggable="true"
+      :is-resizable="true"
+      :is-mirrored="false"
+      :vertical-compact="true"
+      :margin="[10, 10]"
+      :use-css-transforms="true"
     >
-      <div class="container">
-        <card
-          data-image="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        >
-          <h1 slot="header">{{item.i.title}}</h1>
-          <p slot="content">{{item.i.kpi}}</p>
-        </card>
-      </div>
-    </grid-item>
-  </grid-layout>
+      <grid-item
+        v-for="item in layout"
+        :x="item.x"
+        :y="item.y"
+        :w="item.w"
+        :h="item.h"
+        :i="item.i"
+        :key="item.i"
+      >
+        <div class>
+          <card :data-image="item.i.img">
+            <h1 slot="header">{{item.i.title}}</h1>
+            <p slot="content">{{item.i.kpi}}</p>
+          </card>
+        </div>
+      </grid-item>
+    </grid-layout>
+  </div>
   <!-- </div> -->
 </template>
 
@@ -54,127 +53,184 @@ export default {
           y: 0,
           w: 2,
           h: 8,
-          i: { title: "kpi", kpi: "test", color: "green" }
-        },
-        {
-          x: 2,
-          y: 0,
-          w: 2,
-          h: 8,
-          i: { title: "kpi2", kpi: "1000", color: "green" }
+          i: {
+            title: "Flight booking",
+            kpi:
+              "Look for a plane ticket and book it ! Made with vue js and node js",
+            color: "green",
+            img: "https://i.ibb.co/09PHq5P/testamadeus.png"
+          }
         },
         {
           x: 4,
           y: 0,
           w: 2,
           h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
-        },
-        {
-          x: 6,
-          y: 0,
-          w: 2,
-          h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
+          i: {
+            title: "Developer journey",
+            kpi:
+              "Blog of Théophile Vast. I talk about my life of developer around the world",
+            color: "green",
+            img: "https://i.ibb.co/r0Nk3xw/Home-A-developer-journey.png"
+          }
         },
         {
           x: 8,
           y: 0,
           w: 2,
           h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
-        },
-        {
-          x: 10,
-          y: 0,
-          w: 2,
-          h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
+          i: {
+            title: "Cosmic civil war",
+            kpi:
+              "Video game project where you need to destroy asteroids in 5 level different",
+            color: "green",
+            img:
+              "https://tvast.github.io/portfolio-theophile-vast/PortfolioTheophileVast/img/ccw1.jpg"
+          }
         },
         {
           x: 0,
           y: 5,
           w: 2,
           h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
-        },
-        {
-          x: 2,
-          y: 5,
-          w: 2,
-          h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
+          i: {
+            title: "Hackathon NAO",
+            kpi:
+              "Prototype of a IOT connected book to NAO to share and save knowledge about a subject",
+            color: "green",
+            img:
+              "https://tvast.github.io/portfolio-theophile-vast/PortfolioTheophileVast/img/nao2.jpg"
+          }
         },
         {
           x: 4,
           y: 5,
           w: 2,
           h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
-        },
-        {
-          x: 6,
-          y: 5,
-          w: 2,
-          h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
+          i: {
+            title: "Transport order monitoring",
+            kpi:
+              "TOM is a delay order dashboard made with vue, node and elastic search",
+            color: "green",
+            img: "https://i.ibb.co/y4Y2Ys8/page3.png"
+          }
         },
         {
           x: 8,
           y: 5,
           w: 2,
           h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
-        },
-        {
-          x: 10,
-          y: 5,
-          w: 2,
-          h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
+          i: {
+            title: "Triangle generator",
+            kpi:
+              "Generate random shape and colour of triangle in vanila javascript",
+            color: "green",
+            img: "https://i.ibb.co/Yps41qh/page16.png"
+          }
         },
         {
           x: 0,
-          y: 10,
+          y: 5,
           w: 2,
           h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
-        },
-        {
-          x: 2,
-          y: 10,
-          w: 2,
-          h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
+          i: {
+            title: "Edouard wolton",
+            kpi:
+              "Online showcase of his artworks made with wordpress with a custom theme",
+            color: "green",
+            img: "https://i.ibb.co/cC4SVr4/page18.png"
+          }
         },
         {
           x: 4,
-          y: 10,
+          y: 5,
           w: 2,
           h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
-        },
-        {
-          x: 6,
-          y: 10,
-          w: 2,
-          h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
+          i: {
+            title: "Vamos a casa",
+            kpi:
+              "Real estate website in Cancun Mexico. Made in 2019 to help an independant seller create his business",
+            color: "green",
+            img:
+              "https://i.ibb.co/drtr2bb/Vamos-a-Casa-Las-mejores-casas-de-Cancu-n-Riviera-Maya-y-Merida.png"
+          }
         },
         {
           x: 8,
-          y: 10,
+          y: 5,
           w: 2,
           h: 8,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
-        },
-        {
-          x: 10,
-          y: 10,
-          w: 2,
-          h: 4,
-          i: { title: "kpi3", kpi: "2400", color: "green" }
+          i: {
+            title: "Le shop a Terence",
+            kpi:
+              "E-commerce website made for an artist who sell his artwork and homemade product online",
+            color: "green",
+            img: "https://i.ibb.co/wc5vQK4/page21.png"
+          }
         }
+        // {
+        //   x: 6,
+        //   y: 5,
+        //   w: 2,
+        //   h: 8,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // },
+        // {
+        //   x: 8,
+        //   y: 5,
+        //   w: 2,
+        //   h: 8,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // },
+        // {
+        //   x: 10,
+        //   y: 5,
+        //   w: 2,
+        //   h: 8,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // },
+        // {
+        //   x: 0,
+        //   y: 10,
+        //   w: 2,
+        //   h: 8,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // },
+        // {
+        //   x: 2,
+        //   y: 10,
+        //   w: 2,
+        //   h: 8,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // },
+        // {
+        //   x: 4,
+        //   y: 10,
+        //   w: 2,
+        //   h: 8,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // },
+        // {
+        //   x: 6,
+        //   y: 10,
+        //   w: 2,
+        //   h: 8,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // },
+        // {
+        //   x: 8,
+        //   y: 10,
+        //   w: 2,
+        //   h: 8,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // },
+        // {
+        //   x: 10,
+        //   y: 10,
+        //   w: 2,
+        //   h: 4,
+        //   i: { title: "kpi3", kpi: "2400", color: "green" }
+        // }
       ]
     };
   }
