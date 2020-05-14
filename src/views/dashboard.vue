@@ -20,16 +20,14 @@
         :i="item.i"
         :key="index"
       >
-        <div @click="openoverlay(index)">
+        <div>
           <div>
-            <card :data-image="item.i.img">
-              <h1 class="showContent" slot="header">{{item.i.title}}</h1>
-              <p slot="content">{{item.i.kpi}}</p>
-            </card>
-            <div class="overlay" v-if="show" :ref="'foo'+index">
-              <div>Overlay Text</div>
-              <img :src="item.i.img" />
-            </div>
+            <a :href="item.i.href">
+              <card :data-image="item.i.img">
+                <h1 class="showContent" slot="header">{{item.i.title}}</h1>
+                <p slot="content">{{item.i.kpi}}</p>
+              </card>
+            </a>
           </div>
         </div>
       </grid-item>
@@ -66,7 +64,8 @@ export default {
             kpi:
               "Look for a plane ticket and book it ! Made with vue js and node js",
             color: "green",
-            img: "https://i.ibb.co/09PHq5P/testamadeus.png"
+            img: "https://i.ibb.co/09PHq5P/testamadeus.png",
+            href: "https://github.com/tvast/amadeusSearchFLightVue"
           }
         },
         {
@@ -79,7 +78,8 @@ export default {
             kpi:
               "Blog of Théophile Vast. I talk about my life of developer around the world",
             color: "green",
-            img: "https://i.ibb.co/r0Nk3xw/Home-A-developer-journey.png"
+            img: "https://i.ibb.co/r0Nk3xw/Home-A-developer-journey.png",
+            href: "https://tvast.github.io/blog/"
           }
         },
         {
@@ -88,6 +88,7 @@ export default {
           w: 2,
           h: 10,
           i: {
+            href: "https://tvast.github.io/cosmiccivilwar/choixniveau.html",
             title: "Cosmic civil war",
             kpi:
               "Video game project where you need to destroy asteroids in 5 level different",
@@ -102,6 +103,8 @@ export default {
           w: 2,
           h: 10,
           i: {
+            href:
+              "http://carrefour-numerique.cite-sciences.fr/fablab/wiki/doku.php?id=projets:hackathon_nao:maitre_nao",
             title: "Hackathon NAO",
             kpi:
               "Prototype of a IOT connected book to NAO to share and save knowledge about a subject",
@@ -116,6 +119,8 @@ export default {
           w: 2,
           h: 10,
           i: {
+            href:
+              "https://tvast.github.io/blog/redesign_transport_order_monitoring_app/redesign_transport_order_monitoring_app/",
             title: "Transport order monitoring",
             kpi:
               "TOM is a delay order dashboard made with vue, node and elastic search",
@@ -129,6 +134,7 @@ export default {
           w: 2,
           h: 10,
           i: {
+            href: "https://tvast.github.io/trianglegenerator/",
             title: "Triangle generator",
             kpi:
               "Generate random shape and colour of triangle in vanila javascript",
@@ -142,6 +148,7 @@ export default {
           w: 2,
           h: 10,
           i: {
+            href: "http://edouardwolton.com/home",
             title: "Edouard wolton",
             kpi:
               "Online showcase of his artworks made with wordpress with a custom theme",
@@ -155,6 +162,7 @@ export default {
           w: 2,
           h: 10,
           i: {
+            href: "http://vamosacasa.com.mx/",
             title: "Vamos a casa",
             kpi:
               "Real estate website in Cancun Mexico. Made in 2019 to help an independant seller create his business",
@@ -169,6 +177,7 @@ export default {
           w: 2,
           h: 10,
           i: {
+            href: "",
             title: "Le shop a Terence",
             kpi:
               "E-commerce website made for an artist who sell his artwork and homemade product online",
