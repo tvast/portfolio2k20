@@ -3,6 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+
+import VFC from 'vfc'
+import 'vfc/dist/vfc.css'
+
+Vue.use(VFC)
+
 Vue.config.productionTip = false
 
 new Vue({
