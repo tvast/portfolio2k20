@@ -249,5 +249,6 @@ p + p {
   font-size: 36px;
   font-weight: 700;
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+  padding: 10%;
 }
 </style>

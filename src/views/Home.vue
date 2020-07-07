@@ -24,7 +24,7 @@
       <card
         data-image="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80"
       >
-        <h1 slot="header">I build website that blow your (human) mind</h1>
+        <h1 slot="header">I build website that blow your (human)mind</h1>
         <p slot="content">Just take a look at my portfolio</p>
       </card>
     </div>

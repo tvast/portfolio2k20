@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
 
 import VFC from 'vfc'
 import 'vfc/dist/vfc.css'

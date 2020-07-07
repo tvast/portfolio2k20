@@ -1,6 +1,83 @@
 <template>
   <div class="home">
-    <h1></h1>
+    <div id="app">
+      <div id="nav">
+        <router-link to="/">
+          <div class="headingWrapper">
+            <a href="#" class="header header--raiseUp header--svg">
+              <svg>
+                <defs>
+                  <linearGradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadMethod="repeat">
+                    <stop offset="0%" stop-color="#e62915" />
+                    <stop offset="50%" stop-color="#e62915" />
+                    <stop offset="51%" stop-color="#fff" />
+                    <stop offset="99%" stop-color="#fff" />
+                    <stop offset="100%" stop-color="#e62915" />
+                  </linearGradient>
+                </defs>
+                <text y="1.2em">Home</text>
+              </svg>
+            </a>
+          </div>
+        </router-link>|
+        <router-link to="/about">
+          <div class="headingWrapper">
+            <a href="#" class="header header--raiseUp header--svg">
+              <svg>
+                <defs>
+                  <linearGradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadMethod="repeat">
+                    <stop offset="0%" stop-color="#e62915" />
+                    <stop offset="50%" stop-color="#e62915" />
+                    <stop offset="51%" stop-color="#fff" />
+                    <stop offset="99%" stop-color="#fff" />
+                    <stop offset="100%" stop-color="#e62915" />
+                  </linearGradient>
+                </defs>
+                <text y="1.2em">About</text>
+              </svg>
+            </a>
+          </div>sss
+        </router-link>|
+        <router-link to="/dashboard">
+          <div class="headingWrapper">
+            <a href="#" class="header header--raiseUp header--svg">
+              <svg>
+                <defs>
+                  <linearGradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadMethod="repeat">
+                    <stop offset="0%" stop-color="#e62915" />
+                    <stop offset="50%" stop-color="#e62915" />
+                    <stop offset="51%" stop-color="#fff" />
+                    <stop offset="99%" stop-color="#fff" />
+                    <stop offset="100%" stop-color="#e62915" />
+                  </linearGradient>
+                </defs>
+                <text y="1.2em">Portfolio</text>
+              </svg>
+            </a>
+          </div>
+        </router-link>|
+        <router-link to="/contact">
+          <div class="headingWrapper">
+            <a href="#" class="header header--raiseUp header--svg">
+              <svg>
+                <defs>
+                  <linearGradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadMethod="repeat">
+                    <stop offset="0%" stop-color="#e62915" />
+                    <stop offset="50%" stop-color="#e62915" />
+                    <stop offset="51%" stop-color="#fff" />
+                    <stop offset="99%" stop-color="#fff" />
+                    <stop offset="100%" stop-color="#e62915" />
+                  </linearGradient>
+                </defs>
+                <text y="1.2em">Contact</text>
+              </svg>
+            </a>
+          </div>
+        </router-link>|
+        <!-- <router-link to="/dashboard">dashboard</router-link> -->
+      </div>
+    </div>
+
     <div class="fullpage">
       <!-- preloadre -->
       <transition name="loader2">
@@ -8,6 +85,7 @@
           <div class="preloader">
             <transition name="loader">
               <h2 class="text" v-if="load">PORTFOLIO THEOPHILE VAST</h2>
+
               <!-- <div class="canvas">
                 <div class="head"></div>
                 <div class="body"></div>
@@ -37,15 +115,6 @@
             <span class="menu-icon"></span>
           </div>-->
 
-          <div id="app">
-            <div id="nav">
-              <router-link to="/">Home</router-link>|
-              <router-link to="/about">About</router-link>|
-              <router-link to="/dashboard">Portfolio</router-link>|
-              <router-link to="/contact">Contact</router-link>|
-              <!-- <router-link to="/dashboard">dashboard</router-link> -->
-            </div>
-          </div>
           <!-- <div class="container">
             <card
               data-image="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
@@ -111,6 +180,25 @@
       </transition>
     </div>
     <router-view />
+    <div class="particles-js">
+      <vue-particles
+        color="#dedede"
+        :particleOpacity="0.7"
+        :particlesNumber="80"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#dedede"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="3"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+      ></vue-particles>
+    </div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
@@ -181,10 +269,293 @@ export default {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #fff;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #10ac84;
+    }
+  }
+}
+
+/*
+	The following mixin is taken and edited from this pen - https://codepen.io/hugo/pen/xzjGB
+	I have added outlineColor to allow the addition of a text-shadow outline for the text.
+ */
+
+@function pow($number, $exp) {
+  $value: 1;
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
+    }
+  } @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
+    }
+  }
+  @return $value;
+}
+
+@function fact($number) {
+  $value: 1;
+  @if $number > 0 {
+    @for $i from 1 through $number {
+      $value: $value * $i;
+    }
+  }
+  @return $value;
+}
+
+@function pi() {
+  @return 3.14159265359;
+}
+
+@function rad($angle) {
+  $unit: unit($angle);
+  $unitless: $angle / ($angle * 0 + 1);
+  // If the angle has 'deg' as unit, convert to radians.
+  @if $unit == deg {
+    $unitless: $unitless / 180 * pi();
+  }
+  @return $unitless;
+}
+
+@function sin($angle) {
+  $sin: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+  }
+  @return $sin;
+}
+
+@function cos($angle) {
+  $cos: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+  }
+  @return $cos;
+}
+
+@mixin shade(
+  $type,
+  $color: #3498db,
+  $borderColor: #fff,
+  $depth: 20,
+  $angle: 135deg,
+  $long: false,
+  $fade: false
+) {
+  $angle: ($angle - 90);
+  $x: 1.1 * cos($angle) + 0px;
+  $y: 1.1 * sin($angle) + 0px;
+  $darken: (lightness($color) / $depth)/2;
+  $opacify: 0;
+  $shadow: ();
+
+  @if $long == true {
+    $darken: 0;
+  }
+
+  @if $fade == true {
+    $opacify: (opacity($color) / $depth);
+    // added this for rendering in some browsers, remove if you like.
+    @include translateZ(0);
+  }
+
+  @for $i from 1 through $depth {
+    $shadow: $shadow,
+      $i *
+        $x
+        $i *
+        $y
+        0
+        hsla(
+          hue($color),
+          saturation($color),
+          (lightness($color) - ($i * $darken)),
+          1 - ($i * $opacify)
+        );
+  }
+  #{$type}-shadow: 1.5px 1.5px 0 $borderColor, 0px 1.5px 0 $borderColor,
+    -1.5px -1.5px 0 $borderColor, -1.5px -1.5px 0 $borderColor,
+    -1.5px 1.5px 0 $borderColor, 1.5px -1.5px 0 $borderColor, $shadow;
+}
+
+//mixin to provide just a basic outline for the text
+@mixin outline($color: #fff) {
+  text-shadow: 1.5px 1.5px 0 $color, -1.5px -1.5px 0 $color,
+    -1.5px -1.5px 0 $color, -1.5px 1.5px 0 $color, 1.5px -1.5px 0 $color;
+}
+
+// Define the fonts used in the Pen
+@import url(https://fonts.googleapis.com/css?family=Francois+One);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+
+// Define the colors
+$pink: #f89bb4;
+$pinkPastel: #ebaca5;
+$pinkDark: #e62915;
+$pinkGrayed: #d38076;
+
+$grayLight: #cac6c5;
+$offWhite: #e7e7e7;
+
+* {
+  box-sizing: border-box;
+}
+
+// Outer heading wrapper (for descriptions, not for the actual effects)
+.headingOuter {
+  // background: #f1f1f1;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  h1 + & {
+    margin-top: 10px;
+  }
+}
+.headingWrapper {
+  text-align: center;
+  // background-color: #fff;
+  padding: 10px;
+}
+
+// default header class – used on all examples
+// .header {
+//   display: inline-block;
+//   text-align: center;
+//   font-family: "Francois One", Helvetica, Arial, sans-serif;
+//   font-size: 96px;
+//   color: $offWhite;
+//   text-decoration: none;
+
+//   @include outline($grayLight);
+
+//   transition: all 400ms ease-in-out;
+// }
+
+// effect for pushing the text down onto the page
+// default is the letters emerging from the page and merging back down on hover
+.header--pushDown {
+  @include shade(text, #aaa, #333, 10, 135deg, true);
+
+  &:hover {
+    transform: translate(9px, 9px);
+    @include outline($grayLight);
+  }
+}
+
+// raising text from page when hovered, so flipped state to header--pushDown class
+.header--raiseUp {
+  &:hover {
+    transform: translate(-9px, -9px);
+    @include shade(text, #aaa, #333, 10, 135deg, true);
+  }
+}
+
+// creates a shadow effect, rather than a raised lettering effect
+// simply by adjusting the translate position a little
+.header--shadow {
+  &:hover {
+    transform: translate(5px, 0);
+  }
+
+  &.header--raiseUp {
+    &:hover {
+      transform: translate(-5px, 0);
+    }
+  }
+}
+
+//Brighter colored text
+.color-bright {
+  background-color: $pinkPastel;
+
+  & .header {
+    color: $pink;
+    @include outline($pinkGrayed);
+  }
+
+  //push down text
+  & .header--pushDown {
+    @include shade(text, $pinkDark, #fff, 10, 135deg, true);
+
+    &:hover {
+      @include outline($pinkGrayed);
+    }
+  }
+
+  //raise up text
+  & .header--raiseUp:hover {
+    @include shade(text, $pinkDark, #fff, 10, 135deg, true);
+  }
+}
+
+// SVG Pattern text effect
+// Same as the above but with a pattern text effect on hover
+// Played around with this for a while – cannot be done with background clip and a CSS gradient as the
+// text-shadow always appears in front of the background (unless you have no background color on the wrapping element)
+// Therefore, use SVG linearGradient and animate the stop points using CSS
+svg {
+  line-height: 1.2;
+  width: 410px;
+  height: 1.5em;
+}
+.header--svg {
+  text,
+  stop {
+    transition: all 350ms ease-in-out;
+  }
+  text {
+    text-transform: uppercase;
+    fill: url(#striped);
+    @include outline($grayLight);
+  }
+  &:hover text {
+    @include shade(text, #aaa, #333, 10, 135deg, true);
+  }
+
+  //animate gradient stop points
+  & stop {
+    stop-color: $offWhite;
+  }
+  &:hover stop {
+    stop-color: #fff;
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      stop-color: $pinkGrayed;
+    }
+  }
+}
+
+// Brighter version of the SVG pattern text
+.color-bright {
+  & .header--svg {
+    text {
+      fill: url(#stripedColor);
+      @include outline($pinkGrayed);
+    }
+    &:hover text {
+      @include shade(text, $pinkDark, #fff, 10, 135deg, true);
+    }
+  }
+  & stop {
+    stop-color: $pink;
+  }
+  & .header--svg:hover stop {
+    &:nth-child(2),
+    &:nth-child(3) {
+      stop-color: #ed5751;
     }
   }
 }
@@ -896,5 +1267,23 @@ a:visited:hover {
 .leg.right {
   left: 30px;
   animation: step 0.5s ease-out 0.5s alternate infinite none running;
+}
+#particles-js {
+  z-index: -5000;
+}
+
+.vue-particles {
+  height: 50%;
+}
+
+.particles-js {
+  background-image: url(./assets/image2.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -900;
 }
 </style>
