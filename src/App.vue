@@ -36,7 +36,7 @@
                 <text y="1.2em">About</text>
               </svg>
             </a>
-          </div>sss
+          </div>
         </router-link>|
         <router-link to="/dashboard">
           <div class="headingWrapper">
@@ -266,6 +266,7 @@ export default {
 <style lang="scss">
 #nav {
   padding: 30px;
+  display: flex !important;
 
   a {
     font-weight: bold;
@@ -907,7 +908,7 @@ a:visited {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  margin: 5px;
+  // margin: 5px;
 }
 
 a:hover,
