@@ -1,39 +1,56 @@
 <template>
   <div class="row logo">
-            <br><br>
-            <h1 class="foo2 header center logo">I tailor well crafted website </h1>
-            <div class="row center">
-              <h5 class="header col s12 light">with the best UX/UI</h5>
-            </div>
-            <div class="col s12 m4">
-              <div class="icon-block">
-                <h2 class="animated infinite swing center #42a5f5 darken-4-text"><i class="material-icons">web</i></h2>
-                <h4 class="center">Front end specialist</h4>
+    <br />
 
-                <p class="light size">Discover my project on this website. I work with Node, Angular 2, Git, HTML, CSS,
-                  Vanilla Javascript and many other cool stuff</p>
-              </div>
-            </div>
+    <br />
+    <h1 class="foo2 header center logo">I tailor well crafted website</h1>
+    <div class="row center">
+      <h5 class="header col s12 light">with the best UX/UI</h5>
+    </div>
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="animated infinite swing center #42a5f5 darken-4-text">
+          <i class="material-icons">web</i>
+        </h2>
+        <h4 class="center">Front end specialist</h4>
 
-            <div class="col s12 m4">
-              <div class="icon-block">
-                <h2 class="animated infinite rotateOut center #42a5f5 darken-4-text"><i
-                    class="material-icons">settings</i></h2>
-                <h4 class="center">Fullstack experience</h4>
+        <p class="light size">
+          Discover my project on this website. I work with Node, Angular 2, Git, HTML, CSS,
+          Vanilla Javascript and many other cool stuff
+        </p>
+      </div>
+    </div>
 
-                <p class="light size">I've worked for 3 years as a freelance developers. I've also work at
-                  voyages-sncf.Com in the Supervision team</p>
-              </div>
-            </div>
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="animated infinite rotateOut center #42a5f5 darken-4-text">
+          <i class="material-icons">settings</i>
+        </h2>
+        <h4 class="center">Fullstack experience</h4>
 
-            <div class="col s12 m4">
-              <div class="icon-block">
-                <h2 class=" center #42a5f5 darken-4-text"><i class="material-icons">trending_up</i></h2>
-                <h4 class="center">Agile knowledge</h4>
+        <p class="light size">
+          I've worked for 3 years as a freelance developers. I've also work at
+          voyages-sncf.Com in the Supervision team
+        </p>
+      </div>
+    </div>
 
-                <p class="light size">I'm trained with agile and I love daily scrum meeting, retrospectives and all
-                  scrum rituals </p>
-              </div>
-            </div>
-          </div>
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center #42a5f5 darken-4-text">
+          <i class="material-icons">trending_up</i>
+        </h2>
+        <h4 class="center">Agile knowledge</h4>
+
+        <p class="light size">
+          I'm trained with agile and I love daily scrum meeting, retrospectives and all
+          scrum rituals
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
+
+<style lang="scss" >
+
+</style>

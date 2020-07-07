@@ -7,7 +7,7 @@
       <card
         data-image="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
       >
-        <h1 slot="header">Fullstack specialist</h1>
+        <h1 slot="header">Fullstack specialist, talk from robot to human</h1>
         <p slot="content">
           Discover my project on this website. I work with Node, Vue js, Elastic search, Mongo db
           Vanilla Javascript and many other cool stuff
@@ -16,14 +16,16 @@
       <card
         data-image="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
       >
-        <h1 slot="header">The best UX/UI</h1>
-        <p slot="content">I'm a huge fan of Google material design guideline</p>
+        <h1 slot="header">The best user interface is made for human</h1>
+        <p
+          slot="content"
+        >I'm a huge fan of Google material design guideline. And I apply those principles on every project</p>
       </card>
       <card
         data-image="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80"
       >
-        <h1 slot="header">Trees</h1>
-        <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <h1 slot="header">I build website that blow your (human) mind</h1>
+        <p slot="content">Just take a look at my portfolio</p>
       </card>
     </div>
   </div>
