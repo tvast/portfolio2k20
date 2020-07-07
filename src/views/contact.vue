@@ -1,6 +1,6 @@
 <template>
   <div class>
-    <div class="container">
+    <div class="container foo2">
       <h1>hello</h1>
       <p>
         My name is Théophile Vast and you can find me on
@@ -8,7 +8,9 @@
         <a href="https://twitter.com/Theophile_Vast">twitter</a> and
         <a href="https://www.linkedin.com/in/theophile-vast/">linkedin</a>
       </p>
-      <div class="console">
+
+      <vue-terminal :task-list="taskList" :command-list="commandList" />
+      <!-- <div class="console">
         <div class="output">
           <span>Initializing...</span>
           <br />
@@ -43,7 +45,7 @@
           <span>dev$</span>
           <textarea class="input" name="input" cols="30" rows="1"></textarea>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -52,20 +54,29 @@
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
 // import card from "@/components/card.vue";
-
+import VueTerminal from "vue-terminal";
 export default {
   name: "Home",
-  components: {
-    // HelloWorld
-    // card
-  },
+  components: { VueTerminal },
   data: () => ({
     preloader: true,
     load: true,
     mainPage: false,
     widthLoad: 50,
     showMenu: false,
-    menuIcon: false
+    menuIcon: false,
+    taskList: {
+      boot: {
+        description: "get the 0 ",
+        messagesOrTask: [] //(function)
+      }
+    },
+    commandList: {
+      boot: {
+        description: "get the 0 ",
+        messagesOrTask: [] //(function)
+      }
+    }
   }),
   methods: {}
 };
@@ -187,24 +198,25 @@ export default {
 }
 
 html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Press Start 2P", cursive;
-  background-color: #212121;
-}
+// body {
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+//   font-family: "Poiret One", cursive;
+//   background-color: #212121;
+// }
 
-h1,
-h2,
-p,
-span,
-textarea {
-  font-family: "Press Start 2P", cursive;
-}
+// h1,
+// h2,
+// p,
+// span,
+// textarea {
+//   font-family: "Poiret One", cursive;
+// }
 
 .console {
   position: relative;
+  background-color: black;
   width: 100%;
   height: 100%;
   overflow: hidden;

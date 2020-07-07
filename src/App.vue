@@ -2,8 +2,8 @@
   <div class="home">
     <div id="app">
       <div id="nav">
-        <router-link to="/">
-          <div class="headingWrapper">
+        <div class="headingWrapper">
+          <router-link to="/">
             <a href="#" class="header header--raiseUp header--svg">
               <svg>
                 <defs>
@@ -18,10 +18,11 @@
                 <text y="1.2em">Home</text>
               </svg>
             </a>
-          </div>
-        </router-link>|
-        <router-link to="/about">
-          <div class="headingWrapper">
+          </router-link>
+        </div>
+
+        <div class="headingWrapper">
+          <router-link to="/about">
             <a href="#" class="header header--raiseUp header--svg">
               <svg>
                 <defs>
@@ -36,8 +37,9 @@
                 <text y="1.2em">About</text>
               </svg>
             </a>
-          </div>
-        </router-link>|
+          </router-link>
+        </div>
+
         <router-link to="/dashboard">
           <div class="headingWrapper">
             <a href="#" class="header header--raiseUp header--svg">
