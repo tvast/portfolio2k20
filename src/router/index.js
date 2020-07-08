@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Mobile from "../components/HelloWorld.vue";
+import HelloWorld from "../components/HelloWorld.vue";
 Vue.use(VueRouter)
 
 //A bit late for this but, in case if any of you are looking for I handled the situation like this: I added meta to my router:
@@ -17,15 +17,15 @@ const routes = [
     name: 'mainView',
     component: Home,
     meta: {
-      'hasMobileView': true
+      'hasDesktopView ': true
     }
   },
   {
     path: '/mobile-view',
     name: 'mobileView',
-    component: Mobile,
+    component: HelloWorld,
     meta: {
-      'hasDesktopView': true
+      'hasMobileView': true
     }
   },
   // {

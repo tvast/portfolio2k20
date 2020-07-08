@@ -111,15 +111,16 @@
 
       <div v-responsive="['hidden-all','xs','sm']">
         <div class="topnav">
-          <a href="#home" class="active">Logo</a>
-          <div id="myLinks">
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-          </div>
-          <a class="icon" @click="myFunction()">
-            <i class="fa fa-bars"></i>
+          <a href="#home" class="active">
+            <a class="icon" @click="myFunction()">MENU</a>
           </a>
+          <div id="myLinks">
+            <a href="https://tvast.github.io/blog/">Blog</a>
+            <a href="mailto:theophile.vast@gmail.com">Contact</a>
+            <router-link to="/about">
+              <a>About</a>
+            </router-link>
+          </div>
         </div>
       </div>
 
