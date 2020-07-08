@@ -1,83 +1,129 @@
 <template>
   <div class="home">
     <div id="app">
-      <div id="nav">
-        <div class="headingWrapper">
-          <router-link to="/">
-            <a href="#" class="header header--raiseUp header--svg">
-              <svg>
-                <defs>
-                  <linearGradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadMethod="repeat">
-                    <stop offset="0%" stop-color="#e62915" />
-                    <stop offset="50%" stop-color="#e62915" />
-                    <stop offset="51%" stop-color="#fff" />
-                    <stop offset="99%" stop-color="#fff" />
-                    <stop offset="100%" stop-color="#e62915" />
-                  </linearGradient>
-                </defs>
-                <text y="1.2em">Home</text>
-              </svg>
-            </a>
-          </router-link>
-        </div>
-
-        <div class="headingWrapper">
-          <router-link to="/about">
-            <a href="#" class="header header--raiseUp header--svg">
-              <svg>
-                <defs>
-                  <linearGradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadMethod="repeat">
-                    <stop offset="0%" stop-color="#e62915" />
-                    <stop offset="50%" stop-color="#e62915" />
-                    <stop offset="51%" stop-color="#fff" />
-                    <stop offset="99%" stop-color="#fff" />
-                    <stop offset="100%" stop-color="#e62915" />
-                  </linearGradient>
-                </defs>
-                <text y="1.2em">About</text>
-              </svg>
-            </a>
-          </router-link>
-        </div>
-
-        <router-link to="/dashboard">
+      <div v-responsive="'hidden-xs'">
+        <div id="nav">
           <div class="headingWrapper">
-            <a href="#" class="header header--raiseUp header--svg">
-              <svg>
-                <defs>
-                  <linearGradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadMethod="repeat">
-                    <stop offset="0%" stop-color="#e62915" />
-                    <stop offset="50%" stop-color="#e62915" />
-                    <stop offset="51%" stop-color="#fff" />
-                    <stop offset="99%" stop-color="#fff" />
-                    <stop offset="100%" stop-color="#e62915" />
-                  </linearGradient>
-                </defs>
-                <text y="1.2em">Portfolio</text>
-              </svg>
-            </a>
+            <router-link to="/">
+              <a href="#" class="header header--raiseUp header--svg">
+                <svg>
+                  <defs>
+                    <linearGradient
+                      id="striped"
+                      x1="0"
+                      x2="0"
+                      y1="0%"
+                      y2="4%"
+                      spreadMethod="repeat"
+                    >
+                      <stop offset="0%" stop-color="#e62915" />
+                      <stop offset="50%" stop-color="#e62915" />
+                      <stop offset="51%" stop-color="#fff" />
+                      <stop offset="99%" stop-color="#fff" />
+                      <stop offset="100%" stop-color="#e62915" />
+                    </linearGradient>
+                  </defs>
+                  <text y="1.2em">Home</text>
+                </svg>
+              </a>
+            </router-link>
           </div>
-        </router-link>|
-        <router-link to="/contact">
+
           <div class="headingWrapper">
-            <a href="#" class="header header--raiseUp header--svg">
-              <svg>
-                <defs>
-                  <linearGradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadMethod="repeat">
-                    <stop offset="0%" stop-color="#e62915" />
-                    <stop offset="50%" stop-color="#e62915" />
-                    <stop offset="51%" stop-color="#fff" />
-                    <stop offset="99%" stop-color="#fff" />
-                    <stop offset="100%" stop-color="#e62915" />
-                  </linearGradient>
-                </defs>
-                <text y="1.2em">Contact</text>
-              </svg>
-            </a>
+            <router-link to="/about">
+              <a href="#" class="header header--raiseUp header--svg">
+                <svg>
+                  <defs>
+                    <linearGradient
+                      id="striped"
+                      x1="0"
+                      x2="0"
+                      y1="0%"
+                      y2="4%"
+                      spreadMethod="repeat"
+                    >
+                      <stop offset="0%" stop-color="#e62915" />
+                      <stop offset="50%" stop-color="#e62915" />
+                      <stop offset="51%" stop-color="#fff" />
+                      <stop offset="99%" stop-color="#fff" />
+                      <stop offset="100%" stop-color="#e62915" />
+                    </linearGradient>
+                  </defs>
+                  <text y="1.2em">About</text>
+                </svg>
+              </a>
+            </router-link>
           </div>
-        </router-link>|
-        <!-- <router-link to="/dashboard">dashboard</router-link> -->
+
+          <router-link to="/dashboard">
+            <div class="headingWrapper">
+              <a href="#" class="header header--raiseUp header--svg">
+                <svg>
+                  <defs>
+                    <linearGradient
+                      id="striped"
+                      x1="0"
+                      x2="0"
+                      y1="0%"
+                      y2="4%"
+                      spreadMethod="repeat"
+                    >
+                      <stop offset="0%" stop-color="#e62915" />
+                      <stop offset="50%" stop-color="#e62915" />
+                      <stop offset="51%" stop-color="#fff" />
+                      <stop offset="99%" stop-color="#fff" />
+                      <stop offset="100%" stop-color="#e62915" />
+                    </linearGradient>
+                  </defs>
+                  <text y="1.2em">Portfolio</text>
+                </svg>
+              </a>
+            </div>
+          </router-link>|
+          <router-link to="/contact">
+            <div class="headingWrapper">
+              <a href="#" class="header header--raiseUp header--svg">
+                <svg>
+                  <defs>
+                    <linearGradient
+                      id="striped"
+                      x1="0"
+                      x2="0"
+                      y1="0%"
+                      y2="4%"
+                      spreadMethod="repeat"
+                    >
+                      <stop offset="0%" stop-color="#e62915" />
+                      <stop offset="50%" stop-color="#e62915" />
+                      <stop offset="51%" stop-color="#fff" />
+                      <stop offset="99%" stop-color="#fff" />
+                      <stop offset="100%" stop-color="#e62915" />
+                    </linearGradient>
+                  </defs>
+                  <text y="1.2em">Contact</text>
+                </svg>
+              </a>
+            </div>
+          </router-link>|
+          <!-- <router-link to="/dashboard">dashboard</router-link> -->
+        </div>
       </div>
+
+      <div v-responsive="['hidden-all','xs','sm']">
+        <div class="topnav">
+          <a href="#home" class="active">Logo</a>
+          <div id="myLinks">
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+          </div>
+          <a class="icon" @click="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </div>
+
+      <div v-responsive.sm.xs>Only visible on smartphone!</div>
     </div>
 
     <div class="fullpage">
@@ -207,7 +253,9 @@
 <script>
 // import card from "@/components/card.vue";
 // import Dashboard from "@/views/dashboard.vue";
-
+import Vue from "vue";
+import vueResponsive from "vue-responsive";
+Vue.directive("responsive", vueResponsive);
 export default {
   name: "Home",
   components: {
@@ -224,6 +272,14 @@ export default {
     menuIcon: false
   }),
   methods: {
+    myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    },
     closeLoad() {
       this.preloader = false;
     },
@@ -1288,5 +1344,37 @@ a:visited:hover {
   width: 100%;
   height: 100%;
   z-index: -900;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.icon {
+  float: right;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #4caf50;
+  color: white;
 }
 </style>

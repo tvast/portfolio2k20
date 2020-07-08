@@ -9,7 +9,7 @@
         <a href="https://www.linkedin.com/in/theophile-vast/">linkedin</a>
       </p>
 
-      <vue-terminal :task-list="taskList" :command-list="commandList" />
+      <vue-terminal :messages="messages" :task-list="taskList" :command-list="commandList" />
       <!-- <div class="console">
         <div class="output">
           <span>Initializing...</span>
@@ -45,7 +45,7 @@
           <span>dev$</span>
           <textarea class="input" name="input" cols="30" rows="1"></textarea>
         </div>
-      </div> -->
+      </div>-->
     </div>
   </div>
 </template>
@@ -65,6 +65,14 @@ export default {
     widthLoad: 50,
     showMenu: false,
     menuIcon: false,
+    messages: [
+      {
+        // time: generateTime(),
+        type: "system",
+        label: "System",
+        message: "Welcome to vTerminal, "
+      }
+    ],
     taskList: {
       boot: {
         description: "get the 0 ",
@@ -78,7 +86,11 @@ export default {
       }
     }
   }),
-  methods: {}
+  methods: {
+    generateTime() {
+      return new Date.toLocaleString();
+    }
+  }
 };
 </script>
 
