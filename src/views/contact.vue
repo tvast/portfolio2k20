@@ -1,16 +1,77 @@
 <template>
   <div class>
-    <div class="container foo2">
-      <h1>hello</h1>
-      <p>
-        My name is Théophile Vast and you can find me on
-        <a href="https://github.com/tvast">github</a>
-        <a href="https://twitter.com/Theophile_Vast">twitter</a> and
-        <a href="https://www.linkedin.com/in/theophile-vast/">linkedin</a>
-      </p>
+    <div v-responsive="'hidden-xs'">
+      <div class>
+        <h1 class="foo2 header center logo">Hello, Bonjour, Hola</h1>
+        <div class="row center">
+          <h5 class="foo2 header col s12 light">start the conversation !</h5>
+        </div>
+        <p class="foo2 header center logo">
+          My name is Théophile Vast and you can find me on
+          <a href="https://github.com/tvast">github</a>
+          <a href="https://twitter.com/Theophile_Vast">twitter</a> and
+          <a href="https://www.linkedin.com/in/theophile-vast/">linkedin</a>
+        </p>
+        <h5
+          class="foo2 header center col s12 light"
+        >To get more info about me type help in the terminal and type the command of your choice</h5>
+        <div class="container">
+          <vue-terminal :messages="messages" :task-list="taskList" :command-list="commandList" />
+        </div>
+      </div>
+      <div v-responsive="['hidden-all','xs','sm']">
+        <section class="page-section bg-white">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8 text-center">
+                <h2 style="color: whitesmoke;background-color: black;">Let's Get In Touch!</h2>
+                <!-- <hr class="divider my-4" /> -->
+                <p
+                  class="text-muted mb-5"
+                >I'm open to participate to Javascript Hackathon or open source project</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                <div class="text-muted">+1 (555) 123-4567</div>
+              </div>
+              <div class="col-lg-4 mr-auto text-center">
+                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
+                <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div v-responsive.sm.xs>
+      <section class="page-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h2 style="color: whitesmoke;background-color: black;">Let's Get In Touch!</h2>
+              <!-- <hr class="divider my-4" /> -->
+              <p
+                class="text-muted mb-5"
+              >I'm open to participate to Javascript Hackathon or open source project</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+              <div class="text-muted">See you soon</div>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+              <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+              <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
+              <a class="d-block" href="mailto:theophile.vast@gmail.com">Contact Théophile Vast</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
-      <vue-terminal :messages="messages" :task-list="taskList" :command-list="commandList" />
-      <!-- <div class="console">
+    <!-- <div class="console">
         <div class="output">
           <span>Initializing...</span>
           <br />
@@ -45,8 +106,7 @@
           <span>dev$</span>
           <textarea class="input" name="input" cols="30" rows="1"></textarea>
         </div>
-      </div>-->
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -73,18 +133,82 @@ export default {
         message: "Welcome to vTerminal, "
       }
     ],
-    taskList: {
-      boot: {
-        description: "get the 0 ",
-        messagesOrTask: [] //(function)
-      }
-    },
     commandList: {
-      boot: {
-        description: "get the 0 ",
-        messagesOrTask: [] //(function)
+      version: {
+        description: "Return this project version",
+        messages: [{ message: "1.0.0" }]
+      },
+      contact: {
+        description: "How to contact author",
+        messages: [
+          { message: "Website: https://islasher.com" },
+          { message: "Email: xuxiaofei915@gmail.com" },
+          { message: "Github: https://github.com/dongsuo" },
+          { message: "WeChat Offical Account: dongsuo" }
+        ]
+      },
+      about: {
+        description: "About author",
+        messages: [
+          {
+            message:
+              "My name is xu xiaofei. I'm a programmer, You can visit my personal website at https://islasher.com to learn more about me."
+          }
+        ]
+      },
+      readme: {
+        description: "About this project.",
+        messages: [
+          {
+            message:
+              "This is a component that emulates a command terminal in browser."
+          }
+        ]
+      },
+      document: {
+        description: "Document of this project.",
+        messages: [
+          {
+            message: {
+              text: "Under Construction",
+              list: [
+                {
+                  label: "hello",
+                  type: "error",
+                  message: "this is a test message"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "git help": {
+        description: "git help",
+        /* eslint-disable */
+        messages: [
+          {
+            message: ` <pre contenteditable="false"> ______           __   ______            _____                                                             __             __     
+|      \         /  \ /      \          |     \                                                           |  \           |  \    
+ \$$$$$$        /  $$|  $$$$$$\          \$$$$$  ______  __     __  ______    _______   _______   ______   \$$  ______  _| $$_   
+  | $$         /  $$  \$$__| $$            | $$ |      \|  \   /  \|      \  /       \ /       \ /      \ |  \ /      \|   $$ \  
+  | $$        |  $$    |     $$       __   | $$  \$$$$$$  $$\ /  $$ \$$$$$$\|  $$$$$$$|  $$$$$$$|  $$$$$$\| $$|  $$$$$$  $$$$$$  
+  | $$         \$$\   __\$$$$$\      |  \  | $$ /      $$ \$$\  $$ /      $$ \$$    \ | $$      | $$   \$$| $$| $$  | $$ | $$ __ 
+ _| $$_         \$$\ |  \__| $$      | $$__| $$|  $$$$$$$  \$$ $$ |  $$$$$$$ _\$$$$$$\| $$_____ | $$      | $$| $$__/ $$ | $$|  
+|   $$ \         \$$\ \$$    $$       \$$    $$ \$$    $$   \$$$   \$$    $$|       $$ \$$     \| $$      | $$| $$    $$  \$$  $$
+ \$$$$$$          \$$  \$$$$$$         \$$$$$$   \$$$$$$$    \$     \$$$$$$$ \$$$$$$$   \$$$$$$$ \$$       \$$| $$$$$$$    \$$$$ 
+                                                                                                              | $$               
+                                                                                                              | $$               
+                                                                                                               \$$               </pre>`
+          }
+        ]
       }
     }
+    // commandList: {
+    //   boot: {
+    //     description: "get the 0 ",
+    //     messagesOrTask: [] //(function)
+    //   }
+    // }
   }),
   methods: {
     generateTime() {
@@ -324,5 +448,9 @@ span.seperator {
       animation: raketes 5s ease-in-out 0.5s infinite;
     }
   }
+}
+.white {
+  color: whitesmoke !important;
+  background-color: purple !important;
 }
 </style>

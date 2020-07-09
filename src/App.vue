@@ -111,7 +111,7 @@
 
       <div v-responsive="['hidden-all','xs','sm']">
         <span @click="openNav()">
-          <button value>Menu</button>
+          <button class="button" value>Menu</button>
         </span>
         <template v-if="nav">
           <div id="myNav" class="overlay">
@@ -121,7 +121,9 @@
             <!-- Overlay content -->
             <div class="overlay-content">
               <a href="https://tvast.github.io/blog/">Blog</a>
-              <a href="mailto:theophile.vast@gmail.com">Contact</a>
+              <router-link to="/contact">
+                <a>Contact</a>
+              </router-link>
               <router-link to="/about">
                 <a>About</a>
               </router-link>
@@ -969,23 +971,6 @@ body {
   animation-delay: 1.5s !important;
 }
 
-a,
-a:active,
-a:visited {
-  color: #535253;
-  text-decoration: none;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-  // margin: 5px;
-}
-
-a:hover,
-a:active:hover,
-a:visited:hover {
-  color: white;
-}
-
 @media screen and (max-width: 767px) {
   .one {
     display: -webkit-box;
@@ -1529,5 +1514,20 @@ button:after {
   100% {
     box-shadow: inset -3px 0 0 2px #fff;
   }
+}
+
+.button {
+  box-sizing: unset;
+  font: normal 20px/20px sans-serif;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 20px;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.17);
+  height: 20px;
+  transition: 200ms ease;
 }
 </style>
