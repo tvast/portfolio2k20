@@ -110,18 +110,24 @@
       </div>
 
       <div v-responsive="['hidden-all','xs','sm']">
-        <div class="topnav">
-          <a href="#home" class="active">
-            <a class="icon" @click="myFunction()">MENU</a>
-          </a>
-          <div id="myLinks">
-            <a href="https://tvast.github.io/blog/">Blog</a>
-            <a href="mailto:theophile.vast@gmail.com">Contact</a>
-            <router-link to="/about">
-              <a>About</a>
-            </router-link>
+        <span @click="openNav()">
+          <button value>Menu</button>
+        </span>
+        <template v-if="nav">
+          <div id="myNav" class="overlay">
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+              <a href="https://tvast.github.io/blog/">Blog</a>
+              <a href="mailto:theophile.vast@gmail.com">Contact</a>
+              <router-link to="/about">
+                <a>About</a>
+              </router-link>
+            </div>
           </div>
-        </div>
+        </template>
       </div>
 
       <div v-responsive.sm.xs>Only visible on smartphone!</div>
@@ -270,16 +276,20 @@ export default {
     mainPage: false,
     widthLoad: 50,
     showMenu: false,
-    menuIcon: false
+    menuIcon: false,
+    nav: false
   }),
   methods: {
-    myFunction() {
-      var x = document.getElementById("myLinks");
-      if (x.style.display === "block") {
-        x.style.display = "none";
-      } else {
-        x.style.display = "block";
-      }
+    openNav() {
+      // document.getElementById("myNav").style.height = "100%";
+      // console.log("coucou");
+      return (this.nav = true);
+    },
+
+    /* Close */
+    closeNav() {
+      // document.getElementById("myNav").style.height = "0%";
+      return (this.nav = false);
     },
     closeLoad() {
       this.preloader = false;
@@ -1338,6 +1348,7 @@ a:visited:hover {
 
 .particles-js {
   background-image: url(./assets/image2.jpg);
+  // background-repeat: repeat-y;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -1360,7 +1371,8 @@ a:visited:hover {
 .topnav a {
   float: left;
   color: white;
-  padding: 14px 16px;
+  padding: 2%;
+  margin: 2%;
   text-decoration: none;
   font-size: 17px;
 }
@@ -1375,7 +1387,147 @@ a:visited:hover {
 }
 
 .active {
-  background-color: #4caf50;
+  background-color: #072b59;
   color: white;
+}
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 100%;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+button:hover {
+  color: rgba(255, 255, 255, 0);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  // margin-top: -80px;
+  // padding-top: 80px;
+  transition: 200ms ease;
+  transition: color 1s ease-out;
+  animation: rainbow 2000ms linear infinite 500ms;
+}
+button {
+  box-sizing: unset;
+  font: normal 20px/20px sans-serif;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 20px;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.17);
+  height: 20px;
+  transition: 200ms ease;
+}
+button:hover:before,
+button:hover:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  // background: ;
+  border-radius: 50%;
+  // margin-top: -40px;
+  box-shadow: inset 3px 0 0 2px #fff;
+  animation: eyes 2000ms linear infinite alternate 500ms;
+}
+button:after {
+  margin-left: -20px;
+}
+
+@keyframes rainbow {
+  0% {
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 100px 0px rgba(255, 100, 100, 0.8);
+  }
+  16.67% {
+    background: rgba(255, 255, 0, 0.2);
+    box-shadow: 0 0 100px 0px rgba(255, 255, 100, 0.8);
+  }
+  33.33% {
+    background: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 100px 0px rgba(100, 255, 100, 0.8);
+  }
+  50% {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 100px 0px rgba(100, 255, 255, 0.8);
+  }
+  66.67% {
+    background: rgba(0, 0, 255, 0.2);
+    box-shadow: 0 0 100px 0px rgba(100, 100, 255, 0.8);
+  }
+  83.33% {
+    background: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 100px 0px rgba(255, 100, 255, 0.8);
+  }
+  100% {
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 100px 0px rgba(255, 100, 100, 0.8);
+  }
+}
+
+@keyframes eyes {
+  0% {
+    box-shadow: inset 3px 0 0 2px #fff;
+  }
+  100% {
+    box-shadow: inset -3px 0 0 2px #fff;
+  }
 }
 </style>
