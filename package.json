@@ -13,6 +13,7 @@
     "p5": "^1.0.0",
     "vfc": "^2.0.0",
     "vue": "^2.6.11",
+    "vue-canvas-effect": "0.0.12",
     "vue-grid-layout": "^2.3.7",
     "vue-material": "^1.0.0-beta-14",
     "vue-p5": "^0.8.3",

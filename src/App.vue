@@ -16,7 +16,7 @@
               </div>
             </div>
           </div>
-        </transition>
+        </transition>  
         <!-- preloadre end-->
         <!-- main website -->
         <transition name="loader">

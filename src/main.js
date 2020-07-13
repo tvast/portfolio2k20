@@ -21,6 +21,9 @@ import 'vue-material/dist/vue-material.min.css'
 import VFC from 'vfc'
 import 'vfc/dist/vfc.css'
 
+import vueCanvas from 'vue-canvas-effect';
+Vue.use(vueCanvas)
+
 Vue.use(VFC)
 
 Vue.config.productionTip = false
