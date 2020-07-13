@@ -174,8 +174,8 @@ p + p {
   border-radius: 10px;
   // box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px,
   // inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
-  -webkit-transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  // -webkit-transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  // transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .card-bg {
