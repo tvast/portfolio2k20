@@ -11,18 +11,18 @@ import responsive from 'vue-responsive'
 Vue.use(responsive)
 
 import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.min.css'
-
-Vue.use(VueMaterial)
-
+// import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default-dark.css'
+Vue.use(VueMaterial)
+
+
 
 import VFC from 'vfc'
 import 'vfc/dist/vfc.css'
 
-import vueCanvas from 'vue-canvas-effect';
-Vue.use(vueCanvas)
+// import vueCanvas from 'vue-canvas-effect';
+// Vue.use(vueCanvas)
 
 Vue.use(VFC)
 

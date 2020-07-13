@@ -731,20 +731,20 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~vue-material/dist/theme/engine"; // Import the theme engine
+// @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
-@include md-register-theme(
-  "default",
-  (
-    primary: md-get-palette-color(blue, A200),
-    // The primary color of your application
-      accent: md-get-palette-color(red, A200),
-    // The accent or secondary color
-      theme: dark // This can be dark or light
-  )
-);
+// @include md-register-theme(
+//   "default",
+//   (
+//     primary: md-get-palette-color(blue, A200),
+//     // The primary color of your application
+//       accent: md-get-palette-color(red, A200),
+//     // The accent or secondary color
+//       theme: dark // This can be dark or light
+//   )
+// );
 
-@import "~vue-material/dist/theme/all";
+// @import "~vue-material/dist/theme/all";
 
 #nav {
   padding: 30px;
