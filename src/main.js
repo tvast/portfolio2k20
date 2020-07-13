@@ -16,7 +16,7 @@ import 'vue-material/dist/vue-material.min.css'
 Vue.use(VueMaterial)
 
 import 'vue-material/dist/vue-material.min.css'
-// import 'vue-material/dist/theme/default-dark.css'
+import 'vue-material/dist/theme/default-dark.css'
 
 import VFC from 'vfc'
 import 'vfc/dist/vfc.css'

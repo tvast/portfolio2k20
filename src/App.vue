@@ -9,14 +9,14 @@
           <div class="all" v-if="preloader">
             <div class="preloader">
               <transition name="loader">
-                <h2 class="text" v-if="load">PORTFOLIO THEOPHILE VAST</h2>
+                <h2 class="text glitchy" v-if="load">PORTFOLIO THEOPHILE VAST</h2>
               </transition>
               <div class="load" ref="load">
                 <div class="inload" ref="inload"></div>
               </div>
             </div>
           </div>
-        </transition>  
+        </transition>
         <!-- preloadre end-->
         <!-- main website -->
         <transition name="loader">
@@ -48,7 +48,29 @@
                       <md-icon>menu</md-icon>
                     </md-button>
 
-                    <span class="md-title">PORTFOLIO Théophile VAST</span>
+                    <span class="md-title glitchy">
+                      <a href="#" class="header header--raiseUp header--svg">
+                        <svg>
+                          <defs>
+                            <linearGradient
+                              id="striped"
+                              x1="0"
+                              x2="0"
+                              y1="0%"
+                              y2="4%"
+                              spreadMethod="repeat"
+                            >
+                              <stop offset="0%" stop-color="#e62915" />
+                              <stop offset="50%" stop-color="#e62915" />
+                              <stop offset="51%" stop-color="#fff" />
+                              <stop offset="99%" stop-color="#fff" />
+                              <stop offset="100%" stop-color="#e62915" />
+                            </linearGradient>
+                          </defs>
+                          <text y="1.2em">PORTFOLIO Théophile VAST</text>
+                        </svg>
+                      </a>
+                    </span>
                   </div>
                 </md-app-toolbar>
 
@@ -1920,5 +1942,109 @@ button:after {
   font-weight: 700;
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
   padding: 10%;
+}
+
+.glitchy {
+  color: white;
+  background-color: black;
+  animation-delay: 2s;
+  position: relative;
+  opacity: 0.6;
+}
+
+.glitchy:before {
+  content: "EXPERIMENT";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  clip: rect(0, 900px, 0, 0);
+  background-color: black;
+  color: white;
+  animation-delay: 4s;
+}
+
+.glitchy:after {
+  content: "EXPERIMENT";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  clip: rect(0, 900px, 0, 0);
+  background-color: black;
+  color: white;
+  animation-delay: 4s;
+}
+
+.glitchy:hover:before {
+  animation: glitch 3s infinite alternate-reverse;
+}
+
+.glitchy:hover:after {
+  animation: glitch 3s infinite alternate-reverse;
+}
+
+@keyframes glitch {
+  0% {
+    clip: rect(88px, 9999px, 5px, 0);
+  }
+  5% {
+    clip: rect(34px, 9999px, 89px, 0);
+  }
+  10% {
+    clip: rect(90px, 9999px, 53px, 0);
+  }
+  15% {
+    clip: rect(98px, 9999px, 45px, 0);
+  }
+  20% {
+    clip: rect(72px, 9999px, 71px, 0);
+  }
+  25% {
+    clip: rect(92px, 9999px, 63px, 0);
+  }
+  30% {
+    clip: rect(44px, 9999px, 79px, 0);
+  }
+  35% {
+    clip: rect(82px, 9999px, 75px, 0);
+  }
+  40% {
+    clip: rect(20px, 9999px, 68px, 0);
+  }
+  45% {
+    clip: rect(9px, 9999px, 65px, 0);
+  }
+  50% {
+    clip: rect(3px, 9999px, 95px, 0);
+  }
+  55% {
+    clip: rect(69px, 9999px, 44px, 0);
+  }
+  60% {
+    clip: rect(3px, 9999px, 27px, 0);
+  }
+  65% {
+    clip: rect(73px, 9999px, 19px, 0);
+  }
+  70% {
+    clip: rect(88px, 9999px, 4px, 0);
+  }
+  75% {
+    clip: rect(30px, 9999px, 37px, 0);
+  }
+  80% {
+    clip: rect(52px, 9999px, 33px, 0);
+  }
+  85% {
+    clip: rect(90px, 9999px, 32px, 0);
+  }
+  90% {
+    clip: rect(68px, 9999px, 39px, 0);
+  }
+  95% {
+    clip: rect(13px, 9999px, 76px, 0);
+  }
+  100% {
+    clip: rect(69px, 9999px, 6px, 0);
+  }
 }
 </style>
