@@ -2,8 +2,8 @@
 
 
 <template>
-  <div class>
-    <div class="container">
+  <div class="md-layout">
+    <div class="md-layout-item">
       <card
         data-image="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
       >
@@ -13,6 +13,8 @@
           Vanilla Javascript and many other cool stuff
         </p>
       </card>
+    </div>
+    <div class="md-layout-item">
       <card
         data-image="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
       >
@@ -21,6 +23,8 @@
           slot="content"
         >I'm a huge fan of Google material design guideline. And I apply those principles on every project</p>
       </card>
+    </div>
+    <div class="md-layout-item">
       <card
         data-image="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80"
       >

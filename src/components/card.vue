@@ -167,7 +167,7 @@ p + p {
   position: relative;
   -webkit-box-flex: 0;
   flex: 0 0 240px;
-  width: 240px;
+  width: 400px;
   height: 320px;
   background-color: #333;
   overflow: hidden;

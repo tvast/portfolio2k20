@@ -1,117 +1,184 @@
 <template>
-  <div class="home">
-    <div id="app">
-      <div v-responsive="'hidden-xs'">
-        <div id="nav">
-          <div class="headingWrapper">
-            <router-link to="/">
-              <a href="#" class="header header--raiseUp header--svg">
-                <svg>
-                  <defs>
-                    <linearGradient
-                      id="striped"
-                      x1="0"
-                      x2="0"
-                      y1="0%"
-                      y2="4%"
-                      spreadMethod="repeat"
-                    >
-                      <stop offset="0%" stop-color="#e62915" />
-                      <stop offset="50%" stop-color="#e62915" />
-                      <stop offset="51%" stop-color="#fff" />
-                      <stop offset="99%" stop-color="#fff" />
-                      <stop offset="100%" stop-color="#e62915" />
-                    </linearGradient>
-                  </defs>
-                  <text y="1.2em">Home</text>
-                </svg>
-              </a>
-            </router-link>
-          </div>
-
-          <div class="headingWrapper">
-            <router-link to="/about">
-              <a href="#" class="header header--raiseUp header--svg">
-                <svg>
-                  <defs>
-                    <linearGradient
-                      id="striped"
-                      x1="0"
-                      x2="0"
-                      y1="0%"
-                      y2="4%"
-                      spreadMethod="repeat"
-                    >
-                      <stop offset="0%" stop-color="#e62915" />
-                      <stop offset="50%" stop-color="#e62915" />
-                      <stop offset="51%" stop-color="#fff" />
-                      <stop offset="99%" stop-color="#fff" />
-                      <stop offset="100%" stop-color="#e62915" />
-                    </linearGradient>
-                  </defs>
-                  <text y="1.2em">About</text>
-                </svg>
-              </a>
-            </router-link>
-          </div>
-
-          <router-link to="/dashboard">
-            <div class="headingWrapper">
-              <a href="#" class="header header--raiseUp header--svg">
-                <svg>
-                  <defs>
-                    <linearGradient
-                      id="striped"
-                      x1="0"
-                      x2="0"
-                      y1="0%"
-                      y2="4%"
-                      spreadMethod="repeat"
-                    >
-                      <stop offset="0%" stop-color="#e62915" />
-                      <stop offset="50%" stop-color="#e62915" />
-                      <stop offset="51%" stop-color="#fff" />
-                      <stop offset="99%" stop-color="#fff" />
-                      <stop offset="100%" stop-color="#e62915" />
-                    </linearGradient>
-                  </defs>
-                  <text y="1.2em">Portfolio</text>
-                </svg>
-              </a>
+  <!-- <div class> -->
+  <div id="app">
+    <!-- <div class="page-container"> -->
+    <div v-responsive="'hidden-xs'">
+      <div class="fullpage">
+        <!-- preloadre -->
+        <transition name="loader2">
+          <div class="all" v-if="preloader">
+            <div class="preloader">
+              <transition name="loader">
+                <h2 class="text" v-if="load">PORTFOLIO THEOPHILE VAST</h2>
+              </transition>
+              <div class="load" ref="load">
+                <div class="inload" ref="inload"></div>
+              </div>
             </div>
-          </router-link>|
-          <router-link to="/contact">
-            <div class="headingWrapper">
-              <a href="#" class="header header--raiseUp header--svg">
-                <svg>
-                  <defs>
-                    <linearGradient
-                      id="striped"
-                      x1="0"
-                      x2="0"
-                      y1="0%"
-                      y2="4%"
-                      spreadMethod="repeat"
-                    >
-                      <stop offset="0%" stop-color="#e62915" />
-                      <stop offset="50%" stop-color="#e62915" />
-                      <stop offset="51%" stop-color="#fff" />
-                      <stop offset="99%" stop-color="#fff" />
-                      <stop offset="100%" stop-color="#e62915" />
-                    </linearGradient>
-                  </defs>
-                  <text y="1.2em">Contact</text>
-                </svg>
-              </a>
-            </div>
-          </router-link>|
-          <!-- <router-link to="/dashboard">dashboard</router-link> -->
-        </div>
+          </div>
+        </transition>
+        <!-- preloadre end-->
+        <!-- main website -->
+        <transition name="loader">
+          <div class v-if="mainPage">
+            <transition name="bounce" key="username-input">
+              <md-app md-waterfall md-mode="overlap">
+                <md-app-toolbar class="md-primary md-large">
+                  <div class="particles-js">
+                    <vue-particles
+                      color="#dedede"
+                      :particleOpacity="0.7"
+                      :particlesNumber="80"
+                      shapeType="circle"
+                      :particleSize="4"
+                      linesColor="#dedede"
+                      :linesWidth="1"
+                      :lineLinked="true"
+                      :lineOpacity="0.4"
+                      :linesDistance="150"
+                      :moveSpeed="3"
+                      :hoverEffect="true"
+                      hoverMode="grab"
+                      :clickEffect="true"
+                      clickMode="push"
+                    ></vue-particles>
+                  </div>
+                  <div class="md-toolbar-row">
+                    <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+                      <md-icon>menu</md-icon>
+                    </md-button>
+
+                    <span class="md-title">PORTFOLIO Théophile VAST</span>
+                  </div>
+                </md-app-toolbar>
+
+                <md-app-drawer :md-active.sync="menuVisible">
+                  <md-toolbar class="md-transparent foo2" md-elevation="0">Toolbox</md-toolbar>
+
+                  <md-list>
+                    <md-list-item>
+                      <router-link to="/">
+                        <a href="#" class="header header--raiseUp header--svg">
+                          <svg>
+                            <defs>
+                              <linearGradient
+                                id="striped"
+                                x1="0"
+                                x2="0"
+                                y1="0%"
+                                y2="4%"
+                                spreadMethod="repeat"
+                              >
+                                <stop offset="0%" stop-color="#e62915" />
+                                <stop offset="50%" stop-color="#e62915" />
+                                <stop offset="51%" stop-color="#fff" />
+                                <stop offset="99%" stop-color="#fff" />
+                                <stop offset="100%" stop-color="#e62915" />
+                              </linearGradient>
+                            </defs>
+                            <text y="1.2em">Home</text>
+                          </svg>
+                        </a>
+                      </router-link>
+                    </md-list-item>
+
+                    <md-list-item>
+                      <router-link to="/about">
+                        <a href="#" class="header header--raiseUp header--svg">
+                          <svg>
+                            <defs>
+                              <linearGradient
+                                id="striped"
+                                x1="0"
+                                x2="0"
+                                y1="0%"
+                                y2="4%"
+                                spreadMethod="repeat"
+                              >
+                                <stop offset="0%" stop-color="#e62915" />
+                                <stop offset="50%" stop-color="#e62915" />
+                                <stop offset="51%" stop-color="#fff" />
+                                <stop offset="99%" stop-color="#fff" />
+                                <stop offset="100%" stop-color="#e62915" />
+                              </linearGradient>
+                            </defs>
+                            <text y="1.2em">About</text>
+                          </svg>
+                        </a>
+                      </router-link>
+                    </md-list-item>
+                    <md-list-item>
+                      <router-link to="/dashboard">
+                        <div class="headingWrapper">
+                          <a href="#" class="header header--raiseUp header--svg">
+                            <svg>
+                              <defs>
+                                <linearGradient
+                                  id="striped"
+                                  x1="0"
+                                  x2="0"
+                                  y1="0%"
+                                  y2="4%"
+                                  spreadMethod="repeat"
+                                >
+                                  <stop offset="0%" stop-color="#e62915" />
+                                  <stop offset="50%" stop-color="#e62915" />
+                                  <stop offset="51%" stop-color="#fff" />
+                                  <stop offset="99%" stop-color="#fff" />
+                                  <stop offset="100%" stop-color="#e62915" />
+                                </linearGradient>
+                              </defs>
+                              <text y="1.2em">Portfolio</text>
+                            </svg>
+                          </a>
+                        </div>
+                      </router-link>
+                    </md-list-item>
+
+                    <md-list-item>
+                      <router-link to="/contact">
+                        <div class="headingWrapper">
+                          <a href="#" class="header header--raiseUp header--svg">
+                            <svg>
+                              <defs>
+                                <linearGradient
+                                  id="striped"
+                                  x1="0"
+                                  x2="0"
+                                  y1="0%"
+                                  y2="4%"
+                                  spreadMethod="repeat"
+                                >
+                                  <stop offset="0%" stop-color="#e62915" />
+                                  <stop offset="50%" stop-color="#e62915" />
+                                  <stop offset="51%" stop-color="#fff" />
+                                  <stop offset="99%" stop-color="#fff" />
+                                  <stop offset="100%" stop-color="#e62915" />
+                                </linearGradient>
+                              </defs>
+                              <text y="1.2em">Contact</text>
+                            </svg>
+                          </a>
+                        </div>
+                      </router-link>
+                    </md-list-item>
+                  </md-list>
+                </md-app-drawer>
+
+                <md-app-content>
+                  <router-view />
+                </md-app-content>
+              </md-app>
+            </transition>
+          </div>
+        </transition>
       </div>
 
       <div v-responsive="['hidden-all','xs','sm']">
         <span @click="openNav()">
           <button class="button" value>Menu</button>
+
+          <router-view />
         </span>
         <template v-if="nav">
           <div id="myNav" class="overlay">
@@ -133,130 +200,8 @@
       </div>
 
       <div v-responsive.sm.xs>Only visible on smartphone!</div>
+      <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     </div>
-
-    <div class="fullpage">
-      <!-- preloadre -->
-      <transition name="loader2">
-        <div class="all" v-if="preloader">
-          <div class="preloader">
-            <transition name="loader">
-              <h2 class="text" v-if="load">PORTFOLIO THEOPHILE VAST</h2>
-
-              <!-- <div class="canvas">
-                <div class="head"></div>
-                <div class="body"></div>
-
-                <div class="bicep left"></div>
-                <div class="forearm left"></div>
-
-                <div class="bicep right"></div>
-                <div class="forearm right"></div>
-
-                <div class="leg left"></div>
-                <div class="leg right"></div>
-              </div>-->
-              <!-- test -->
-            </transition>
-            <div class="load" ref="load">
-              <div class="inload" ref="inload"></div>
-            </div>
-          </div>
-        </div>
-      </transition>
-      <!-- preloadre end-->
-      <!-- main website -->
-      <transition name="loader">
-        <div class="all2" v-if="mainPage">
-          <!-- <div class="menu" @click="open($event)" v-if="menuIcon">
-            <span class="menu-icon"></span>
-          </div>-->
-
-          <!-- <div class="container">
-            <card
-              data-image="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-            >
-              <h1 slot="header">Fullstack specialist</h1>
-              <p slot="content">
-                Discover my project on this website. I work with Node, Vue js, Elastic search, Mongo db
-                Vanilla Javascript and many other cool stuff
-              </p>
-            </card>
-            <card
-              data-image="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
-            >
-              <h1 slot="header">The best UX/UI</h1>
-              <p slot="content">I'm a huge fan of Google material design guideline</p>
-            </card>
-            <card
-              data-image="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80"
-            >
-              <h1 slot="header">Trees</h1>
-              <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </card>
-          </div>-->
-
-          <!-- <transition name="bounce" key="username-input">
-            <div class="menu-block" v-if="showMenu">
-              <div></div>
-              <div class="one">
-                <transition name="bounce2" key="username-input2">
-                  <ul>
-                    <li class="elem animate" v-if="showMenu">
-                      <router-link to="/">Home</router-link>|
-                    </li>
-                    <li class="elem animate">
-                      <router-link to="/about">About</router-link>|
-                    </li>
-                    <li class="elem animate">
-                      <a href="#">Contact</a>
-                    </li>
-                    <li class="elem animate">
-                      <router-link to="/dashboard">dashboard</router-link>
-                    </li>
-                  </ul>
-                </transition>
-              </div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div class="link animate">
-                <a href="#">twitter</a>
-                <a href="#">instagram</a>
-                <a href="#">vk</a>
-              </div>
-              <div class="two animate">
-                <a href="#">&#9743;ASK ME VIA MAIL FOR PHONE</a>
-                <a href="#">&#9993; THEOPHILE.VAST[at]gmail.com</a>
-              </div>
-              <div></div>
-            </div>
-           
-          </transition>-->
-        </div>
-      </transition>
-    </div>
-    <router-view />
-    <div class="particles-js">
-      <vue-particles
-        color="#dedede"
-        :particleOpacity="0.7"
-        :particlesNumber="80"
-        shapeType="circle"
-        :particleSize="4"
-        linesColor="#dedede"
-        :linesWidth="1"
-        :lineLinked="true"
-        :lineOpacity="0.4"
-        :linesDistance="150"
-        :moveSpeed="3"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push"
-      ></vue-particles>
-    </div>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
 <script>
@@ -279,7 +224,8 @@ export default {
     widthLoad: 50,
     showMenu: false,
     menuIcon: false,
-    nav: false
+    nav: false,
+    menuVisible: false
   }),
   methods: {
     openNav() {
@@ -335,13 +281,29 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "~vue-material/dist/theme/engine"; // Import the theme engine
+
+@include md-register-theme(
+  "default",
+  (
+    primary: md-get-palette-color(blue, A200),
+    // The primary color of your application
+      accent: md-get-palette-color(red, A200),
+    // The accent or secondary color
+      theme: dark // This can be dark or light
+  )
+);
+
+@import "~vue-material/dist/theme/all";
+
 #nav {
   padding: 30px;
   display: flex !important;
 
-  a {
+  a svg text {
     font-weight: bold;
     color: #fff;
+    display: inline;
 
     &.router-link-exact-active {
       color: #10ac84;
@@ -1323,13 +1285,6 @@ body {
   left: 30px;
   animation: step 0.5s ease-out 0.5s alternate infinite none running;
 }
-#particles-js {
-  z-index: -5000;
-}
-
-.vue-particles {
-  height: 50%;
-}
 
 .particles-js {
   background-image: url(./assets/image2.jpg);
@@ -1529,5 +1484,13 @@ button:after {
     inset 0 1px 0 0 rgba(255, 255, 255, 0.17);
   height: 20px;
   transition: 200ms ease;
+}
+
+.titlePo {
+  font-family: "Poiret One", cursive;
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+  padding: 10%;
 }
 </style>
