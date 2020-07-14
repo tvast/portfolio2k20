@@ -1,7 +1,7 @@
 <template>
   <div class>
     <div v-responsive="'hidden-xs'">
-      <neon-effect :options="options"></neon-effect>
+      <!-- <neon-effect :options="options"></neon-effect> -->
       <div class>
         <h1 class="foo2 header center logo">Hello, Bonjour, Hola</h1>
         <div class="row center">
@@ -17,7 +17,12 @@
           class="foo2 header center col s12 light"
         >To get more info about me type help in the terminal and type the command of your choice</h5>
         <div class="container">
-          <vue-terminal :messages="messages" :task-list="taskList" :command-list="commandList" />
+          <vue-terminal
+            :messages="messages"
+            :task-list="taskList"
+            greeting="Hola, Bonjour, Hello  welcome to this terminal to interact and contact me, type help to see the commands available and then type the command to get the info. Did I tell you that I was a g33k ?"
+            :command-list="commandList"
+          />
         </div>
       </div>
       <div v-responsive="['hidden-all','xs','sm']">
@@ -154,10 +159,9 @@ export default {
       contact: {
         description: "How to contact author",
         messages: [
-          { message: "Website: https://islasher.com" },
-          { message: "Email: xuxiaofei915@gmail.com" },
-          { message: "Github: https://github.com/dongsuo" },
-          { message: "WeChat Offical Account: dongsuo" }
+          { message: "Website: https://tvast.github.io/portfolio2k20/#" },
+          { message: "Email: theophile.vast@gmail.com" },
+          { message: "Github: https://github.com/tvast" }
         ]
       },
       about: {
@@ -165,7 +169,7 @@ export default {
         messages: [
           {
             message:
-              "My name is xu xiaofei. I'm a programmer, You can visit my personal website at https://islasher.com to learn more about me."
+              "My name is Théophile, fullstack javascirpt developer passionate about vue node and react sometimes."
           }
         ]
       },
@@ -174,46 +178,15 @@ export default {
         messages: [
           {
             message:
-              "This is a component that emulates a command terminal in browser."
+              "This is portfolio that show my latest project online on my github"
           }
         ]
       },
-      document: {
-        description: "Document of this project.",
-        messages: [
-          {
-            message: {
-              text: "Under Construction",
-              list: [
-                {
-                  label: "hello",
-                  type: "error",
-                  message: "this is a test message"
-                }
-              ]
-            }
-          }
-        ]
-      },
+
       "git help": {
         description: "git help",
         /* eslint-disable */
-        messages: [
-          {
-            message: ` <pre contenteditable="false"> ______           __   ______            _____                                                             __             __     
-|      \         /  \ /      \          |     \                                                           |  \           |  \    
- \$$$$$$        /  $$|  $$$$$$\          \$$$$$  ______  __     __  ______    _______   _______   ______   \$$  ______  _| $$_   
-  | $$         /  $$  \$$__| $$            | $$ |      \|  \   /  \|      \  /       \ /       \ /      \ |  \ /      \|   $$ \  
-  | $$        |  $$    |     $$       __   | $$  \$$$$$$  $$\ /  $$ \$$$$$$\|  $$$$$$$|  $$$$$$$|  $$$$$$\| $$|  $$$$$$  $$$$$$  
-  | $$         \$$\   __\$$$$$\      |  \  | $$ /      $$ \$$\  $$ /      $$ \$$    \ | $$      | $$   \$$| $$| $$  | $$ | $$ __ 
- _| $$_         \$$\ |  \__| $$      | $$__| $$|  $$$$$$$  \$$ $$ |  $$$$$$$ _\$$$$$$\| $$_____ | $$      | $$| $$__/ $$ | $$|  
-|   $$ \         \$$\ \$$    $$       \$$    $$ \$$    $$   \$$$   \$$    $$|       $$ \$$     \| $$      | $$| $$    $$  \$$  $$
- \$$$$$$          \$$  \$$$$$$         \$$$$$$   \$$$$$$$    \$     \$$$$$$$ \$$$$$$$   \$$$$$$$ \$$       \$$| $$$$$$$    \$$$$ 
-                                                                                                              | $$               
-                                                                                                              | $$               
-                                                                                                               \$$               </pre>`
-          }
-        ]
+        messages: ["Hello try to find the secret command if this terminal"]
       }
     }
     // commandList: {
@@ -465,5 +438,9 @@ span.seperator {
 .white {
   color: whitesmoke !important;
   background-color: purple !important;
+}
+
+pre {
+  color: white !important;
 }
 </style>
