@@ -16,7 +16,8 @@ import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default-dark.css'
 Vue.use(VueMaterial)
 
-
+import vueCanvas from 'vue-canvas-effect';
+Vue.use(vueCanvas)
 
 import VFC from 'vfc'
 import 'vfc/dist/vfc.css'

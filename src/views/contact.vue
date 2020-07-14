@@ -1,6 +1,7 @@
 <template>
   <div class>
     <div v-responsive="'hidden-xs'">
+      <neon-effect :options="options"></neon-effect>
       <div class>
         <h1 class="foo2 header center logo">Hello, Bonjour, Hola</h1>
         <div class="row center">
@@ -125,6 +126,18 @@ export default {
     widthLoad: 50,
     showMenu: false,
     menuIcon: false,
+    options: {
+      len: 40, //The unilateral length of the pentagon
+      count: 50, //How many lines overlap
+      rate: 20, //rate the smaller fast
+      dieChance: 0.05, //The chance to redraw a single painting failure.
+      sparkChance: 0.1, //[0,1] The larger the figure, the larger the pentagon.
+      sparkDist: 10, //Flash point distance.
+      sparkSize: 2, //Flash point size.
+      contentLight: 60, // [0,100] Brightness of color block
+      shadowToTimePropMult: 6, //The shadow size of the inner ring of the pentagon.
+      bgColorArr: [2, 2, 2] //Background color array
+    },
     messages: [
       {
         // time: generateTime(),

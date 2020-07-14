@@ -166,13 +166,11 @@ export default {
           w: 2,
           h: 10,
           i: {
-            href: "https://tvast.github.io/cosmiccivilwar/choixniveau.html",
-            title: "Cosmic civil war",
-            kpi:
-              "Video game project where you need to destroy asteroids in 5 level different",
+            href: "https://github.com/tvast/react-calculator",
+            title: "React calculator",
+            kpi: "Calculator made with react v 16",
             color: "green",
-            img:
-              "https://tvast.github.io/portfolio-theophile-vast/PortfolioTheophileVast/img/ccw1.jpg"
+            img: "https://i.ibb.co/mv4Kd1P/React-App.png"
           }
         },
         {
@@ -197,13 +195,11 @@ export default {
           w: 2,
           h: 10,
           i: {
-            href:
-              "https://tvast.github.io/blog/redesign_transport_order_monitoring_app/redesign_transport_order_monitoring_app/",
-            title: "Transport order monitoring",
-            kpi:
-              "TOM is a delay order dashboard made with vue, node and elastic search",
+            href: "https://github.com/tvast/elihpoeht-react",
+            title: "Portfolio artist Elihpoeht ",
+            kpi: "Portfolio made for my music side project in React v16",
             color: "green",
-            img: "https://i.ibb.co/y4Y2Ys8/page3.png"
+            img: "https://i.ibb.co/gD7YMvW/React-App2.png"
           }
         },
         {
@@ -212,12 +208,11 @@ export default {
           w: 2,
           h: 10,
           i: {
-            href: "https://tvast.github.io/trianglegenerator/",
-            title: "Triangle generator",
-            kpi:
-              "Generate random shape and colour of triangle in vanila javascript",
+            href: "https://github.com/tvast/spotify-api-quasar-node",
+            title: "Spotify API + Quasar framework",
+            kpi: "Fullstack project, mobile first with Quasar and node JS",
             color: "green",
-            img: "https://i.ibb.co/Yps41qh/page16.png"
+            img: "https://i.ibb.co/9cqhvcj/totem.png"
           }
         },
         {
@@ -227,7 +222,7 @@ export default {
           h: 10,
           i: {
             href: "http://edouardwolton.com/home",
-            title: "Edouard wolton",
+            title: "Portfolio artist Edouard wolton",
             kpi:
               "Online showcase of his artworks made with wordpress with a custom theme",
             color: "green",
@@ -241,7 +236,7 @@ export default {
           h: 10,
           i: {
             href: "http://vamosacasa.com.mx/",
-            title: "Vamos a casa",
+            title: "Real estate in Mexico : Vamos a casa",
             kpi:
               "Real estate website in Cancun Mexico. Made in 2019 to help an independant seller create his business",
             color: "green",
@@ -256,7 +251,7 @@ export default {
           h: 10,
           i: {
             href: "",
-            title: "Le shop a Terence",
+            title: "Artist shop 'le shop à Terence'",
             kpi:
               "E-commerce website made for an artist who sell his artwork and homemade product online",
             color: "green",
