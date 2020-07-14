@@ -200,303 +200,41 @@
     </div>
 
     <div v-responsive.md>
-      <md-app md-waterfall md-mode="overlap">
-        <md-app-toolbar class="md-primary md-large">
-          <div class="particles-js">
-            <vue-particles
-              color="#dedede"
-              :particleOpacity="0.7"
-              :particlesNumber="80"
-              shapeType="circle"
-              :particleSize="4"
-              linesColor="#dedede"
-              :linesWidth="1"
-              :lineLinked="true"
-              :lineOpacity="0.4"
-              :linesDistance="150"
-              :moveSpeed="3"
-              :hoverEffect="true"
-              hoverMode="grab"
-              :clickEffect="true"
-              clickMode="push"
-            ></vue-particles>
-          </div>
-          <div class="md-toolbar-row">
-            <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
-              <md-icon>menu</md-icon>
-            </md-button>
+      <div id="myNav" v-if="nav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
 
-            <span class="md-title">PORTFOLIO Théophile VAST</span>
-          </div>
-        </md-app-toolbar>
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <a href="https://www.linkedin.com/in/theophile-vast/">linkedin</a>
+          <!-- <a href="#">twitter</a> -->
+          <a href="https://github.com/tvast">github</a>
+          <a href="mailto:theophile.vast@gmail.com">mail</a>
+        </div>
+      </div>
 
-        <md-app-drawer :md-active.sync="menuVisible">
-          <md-toolbar class="md-transparent foo2" md-elevation="0">Toolbox</md-toolbar>
-
-          <md-list>
-            <md-list-item>
-              <router-link to="/">
-                <a href="#" class="header header--raiseUp header--svg">
-                  <svg>
-                    <defs>
-                      <linearGradient
-                        id="striped"
-                        x1="0"
-                        x2="0"
-                        y1="0%"
-                        y2="4%"
-                        spreadMethod="repeat"
-                      >
-                        <stop offset="0%" stop-color="#e62915" />
-                        <stop offset="50%" stop-color="#e62915" />
-                        <stop offset="51%" stop-color="#fff" />
-                        <stop offset="99%" stop-color="#fff" />
-                        <stop offset="100%" stop-color="#e62915" />
-                      </linearGradient>
-                    </defs>
-                    <text y="1.2em">Home</text>
-                  </svg>
-                </a>
-              </router-link>
-            </md-list-item>
-
-            <md-list-item>
-              <router-link to="/about">
-                <a href="#" class="header header--raiseUp header--svg">
-                  <svg>
-                    <defs>
-                      <linearGradient
-                        id="striped"
-                        x1="0"
-                        x2="0"
-                        y1="0%"
-                        y2="4%"
-                        spreadMethod="repeat"
-                      >
-                        <stop offset="0%" stop-color="#e62915" />
-                        <stop offset="50%" stop-color="#e62915" />
-                        <stop offset="51%" stop-color="#fff" />
-                        <stop offset="99%" stop-color="#fff" />
-                        <stop offset="100%" stop-color="#e62915" />
-                      </linearGradient>
-                    </defs>
-                    <text y="1.2em">About</text>
-                  </svg>
-                </a>
-              </router-link>
-            </md-list-item>
-            <md-list-item>
-              <router-link to="/dashboard">
-                <div class="headingWrapper">
-                  <a href="#" class="header header--raiseUp header--svg">
-                    <svg>
-                      <defs>
-                        <linearGradient
-                          id="striped"
-                          x1="0"
-                          x2="0"
-                          y1="0%"
-                          y2="4%"
-                          spreadMethod="repeat"
-                        >
-                          <stop offset="0%" stop-color="#e62915" />
-                          <stop offset="50%" stop-color="#e62915" />
-                          <stop offset="51%" stop-color="#fff" />
-                          <stop offset="99%" stop-color="#fff" />
-                          <stop offset="100%" stop-color="#e62915" />
-                        </linearGradient>
-                      </defs>
-                      <text y="1.2em">Portfolio</text>
-                    </svg>
-                  </a>
-                </div>
-              </router-link>
-            </md-list-item>
-
-            <md-list-item>
-              <router-link to="/contact">
-                <div class="headingWrapper">
-                  <a href="#" class="header header--raiseUp header--svg">
-                    <svg>
-                      <defs>
-                        <linearGradient
-                          id="striped"
-                          x1="0"
-                          x2="0"
-                          y1="0%"
-                          y2="4%"
-                          spreadMethod="repeat"
-                        >
-                          <stop offset="0%" stop-color="#e62915" />
-                          <stop offset="50%" stop-color="#e62915" />
-                          <stop offset="51%" stop-color="#fff" />
-                          <stop offset="99%" stop-color="#fff" />
-                          <stop offset="100%" stop-color="#e62915" />
-                        </linearGradient>
-                      </defs>
-                      <text y="1.2em">Contact</text>
-                    </svg>
-                  </a>
-                </div>
-              </router-link>
-            </md-list-item>
-          </md-list>
-        </md-app-drawer>
-
-        <md-app-content>
-          <router-view />
-        </md-app-content>
-      </md-app>
+      <!-- Use any element to open/show the overlay navigation menu -->
+      <span @click="openNav()">MENU</span>
+      <router-view />
     </div>
 
     <div v-responsive.sm.xs>
-      <md-app md-waterfall md-mode="overlap">
-        <md-app-toolbar class="md-primary md-large">
-          <div class="particles-js">
-            <vue-particles
-              color="#dedede"
-              :particleOpacity="0.7"
-              :particlesNumber="80"
-              shapeType="circle"
-              :particleSize="4"
-              linesColor="#dedede"
-              :linesWidth="1"
-              :lineLinked="true"
-              :lineOpacity="0.4"
-              :linesDistance="150"
-              :moveSpeed="3"
-              :hoverEffect="true"
-              hoverMode="grab"
-              :clickEffect="true"
-              clickMode="push"
-            ></vue-particles>
-          </div>
-          <div class="md-toolbar-row">
-            <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
-              <md-icon>menu</md-icon>
-            </md-button>
+      <div id="myNav" v-if="nav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
 
-            <span class="md-title">PORTFOLIO Théophile VAST</span>
-          </div>
-        </md-app-toolbar>
+        <!-- Overlay content -->
+        <div class="foo2 overlay-content">
+          <a href="https://www.linkedin.com/in/theophile-vast/">linkedin</a>
+          <!-- <a href="#">twitter</a> -->
+          <a href="https://github.com/tvast">github</a>
+          <a href="mailto:theophile.vast@gmail.com">mail</a>
+        </div>
+      </div>
 
-        <md-app-drawer :md-active.sync="menuVisible">
-          <md-toolbar class="md-transparent foo2" md-elevation="0">Toolbox</md-toolbar>
-
-          <md-list>
-            <md-list-item>
-              <router-link to="/">
-                <a href="#" class="header header--raiseUp header--svg">
-                  <svg>
-                    <defs>
-                      <linearGradient
-                        id="striped"
-                        x1="0"
-                        x2="0"
-                        y1="0%"
-                        y2="4%"
-                        spreadMethod="repeat"
-                      >
-                        <stop offset="0%" stop-color="#e62915" />
-                        <stop offset="50%" stop-color="#e62915" />
-                        <stop offset="51%" stop-color="#fff" />
-                        <stop offset="99%" stop-color="#fff" />
-                        <stop offset="100%" stop-color="#e62915" />
-                      </linearGradient>
-                    </defs>
-                    <text y="1.2em">Home</text>
-                  </svg>
-                </a>
-              </router-link>
-            </md-list-item>
-
-            <md-list-item>
-              <router-link to="/about">
-                <a href="#" class="header header--raiseUp header--svg">
-                  <svg>
-                    <defs>
-                      <linearGradient
-                        id="striped"
-                        x1="0"
-                        x2="0"
-                        y1="0%"
-                        y2="4%"
-                        spreadMethod="repeat"
-                      >
-                        <stop offset="0%" stop-color="#e62915" />
-                        <stop offset="50%" stop-color="#e62915" />
-                        <stop offset="51%" stop-color="#fff" />
-                        <stop offset="99%" stop-color="#fff" />
-                        <stop offset="100%" stop-color="#e62915" />
-                      </linearGradient>
-                    </defs>
-                    <text y="1.2em">About</text>
-                  </svg>
-                </a>
-              </router-link>
-            </md-list-item>
-            <md-list-item>
-              <router-link to="/dashboard">
-                <div class="headingWrapper">
-                  <a href="#" class="header header--raiseUp header--svg">
-                    <svg>
-                      <defs>
-                        <linearGradient
-                          id="striped"
-                          x1="0"
-                          x2="0"
-                          y1="0%"
-                          y2="4%"
-                          spreadMethod="repeat"
-                        >
-                          <stop offset="0%" stop-color="#e62915" />
-                          <stop offset="50%" stop-color="#e62915" />
-                          <stop offset="51%" stop-color="#fff" />
-                          <stop offset="99%" stop-color="#fff" />
-                          <stop offset="100%" stop-color="#e62915" />
-                        </linearGradient>
-                      </defs>
-                      <text y="1.2em">Portfolio</text>
-                    </svg>
-                  </a>
-                </div>
-              </router-link>
-            </md-list-item>
-
-            <md-list-item>
-              <router-link to="/contact">
-                <div class="headingWrapper">
-                  <a href="#" class="header header--raiseUp header--svg">
-                    <svg>
-                      <defs>
-                        <linearGradient
-                          id="striped"
-                          x1="0"
-                          x2="0"
-                          y1="0%"
-                          y2="4%"
-                          spreadMethod="repeat"
-                        >
-                          <stop offset="0%" stop-color="#e62915" />
-                          <stop offset="50%" stop-color="#e62915" />
-                          <stop offset="51%" stop-color="#fff" />
-                          <stop offset="99%" stop-color="#fff" />
-                          <stop offset="100%" stop-color="#e62915" />
-                        </linearGradient>
-                      </defs>
-                      <text y="1.2em">Contact</text>
-                    </svg>
-                  </a>
-                </div>
-              </router-link>
-            </md-list-item>
-          </md-list>
-        </md-app-drawer>
-
-        <md-app-content>
-          <router-view />
-        </md-app-content>
-      </md-app>
+      <!-- Use any element to open/show the overlay navigation menu -->
+      <span @click="openNav()">MENU</span>
+      <router-view />
     </div>
   </div>
 </template>
