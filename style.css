@@ -261,8 +261,8 @@ nav {
 }
 .foo3 {
   font-family: 'Poiret One', cursive;
-  color:white;
-  background-color: #676767;
+  color:#676767;
+  /* background-color: #676767; */
 }
 /*Gradient logo*/
 
