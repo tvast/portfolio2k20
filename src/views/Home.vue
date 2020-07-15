@@ -4,7 +4,7 @@
 <template>
   <div>
     <div v-responsive.lg.xl>
-      <neon-effect :options="options"></neon-effect>
+      <!-- <neon-effect :options="options"></neon-effect> -->
       <div class="md-layout">
         <div class="md-layout-item">
           <card
