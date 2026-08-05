@@ -48,7 +48,7 @@
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
 // import VueGridLayout from "vue-grid-layout";
-import card from "@/components/card.vue";
+import card from "../components/card.vue";
 export default {
   name: "Home",
   components: {
